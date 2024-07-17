@@ -4,10 +4,16 @@
 
 // Evet bu bir yorum
 
-let msg;
-msg = "Merhaba Dünyalı!";
-alert(msg);
-msg = "Dünyanızdan altınları almaya geldim!";
-alert(msg);
+// let msg;
+// msg = "Merhaba Dünyalı!";
+// alert(msg);
+// msg = "Dünyanızdan altınları almaya geldim!";
+// alert(msg);
 
-const PI = 3.14;
+// const PI = 3.14;
+
+let name = "Emin";
+
+alert( `hello ${1}` );
+alert( `hello ${"name"}` );
+alert( `hello ${name}` );
