@@ -5,9 +5,9 @@
 // Evet bu bir yorum
 
 let msg;
-msg = 'Merhaba Dünyalı!';
+msg = "Merhaba Dünyalı!";
 alert(msg);
-msg = 'Dünyanızdan altınları almaya geldim!'
+msg = "Dünyanızdan altınları almaya geldim!";
 alert(msg);
 
 const PI = 3.14;
