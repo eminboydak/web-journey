@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <>
-      <a href="/header">header</a>
+      <Link href="/header">header</Link>
     </>
   );
 }
