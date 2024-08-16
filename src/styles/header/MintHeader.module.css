@@ -1,0 +1,7 @@
+.mintnavbarsociallist {
+  @apply text-white hover:text-black transition ease-in-out;
+}
+
+.mintnavbarmenulist {
+  @apply text-white hover:text-black transition ease-in-out px-4;
+}
