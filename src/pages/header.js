@@ -1,9 +1,9 @@
-import Header1 from "@/components/header/Header1";
+import ArchHeader from "@/components/header/ArchHeader";
 
 export default function Header() {
   return (
     <>
-      <Header1 />
+      <ArchHeader />
       <br/>
     </>
   );
