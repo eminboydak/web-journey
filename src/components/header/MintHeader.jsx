@@ -1,5 +1,7 @@
 import styles from "@/styles/header/MintHeader.module.css";
 
+import { useState } from "react";
+
 import {
   FaRss,
   FaFacebook,
@@ -13,6 +15,16 @@ import { IoChatbubbleEllipses } from "react-icons/io5";
 import Image from "next/image";
 
 export default function MintHeader() {
+  const [downloadState, setDownloadState] = useState(false);
+
+  const downloadHandleMouseEnter = () => {
+    setDownloadState(true);
+  };
+
+  const downloadHandleMouseLeave = () => {
+    setDownloadState(false);
+  };
+
   return (
     <div
       id="mint-navbar"
@@ -62,7 +74,14 @@ export default function MintHeader() {
           <div id="mint-navbar-bottom-menu" className="">
             <ul className="flex">
               <li className={styles.mintnavbarmenulist}>Home</li>
-              <li className={styles.mintnavbarmenulist}>Download</li>
+              <li
+                className={styles.mintnavbarmenulist}
+                onMouseEnter={downloadHandleMouseEnter}
+                onMouseLeave={downloadHandleMouseLeave}
+              >
+                Download
+                {downloadState && <Dropdown />}
+              </li>
               <li className={styles.mintnavbarmenulist}>Project</li>
               <li className={styles.mintnavbarmenulist}>About</li>
               <li className={styles.mintnavbarmenulist}>Links</li>
@@ -74,6 +93,37 @@ export default function MintHeader() {
             </button>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+export function Dropdown() {
+  return (
+    <div id="mint-dropdown" className="absolute mt-2 p-2">
+      <div
+        id="mint-dropdown-top"
+        className="bg-slate-100 border-t-2 border-emerald-800 text-black w-auto flex"
+      >
+        <div className="py-5 pl-7 pr-14">
+          <b>Latest version</b>
+          <ul className="my-4 space-y-4">
+            <li>Linux Mint 22</li>
+          </ul>
+        </div>
+        <div className="py-5 pl-7 pr-7">
+          <b>Other versions</b>
+          <ul className="my-4 space-y-4">
+            <li>LMDE 6</li>
+            <li>All Versions</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        id="mint-drowdown-bottom"
+        className="bg-gradient-to-r from-lime-700 to-emerald-600 text-white "
+      >
+        Deneme2
       </div>
     </div>
   );

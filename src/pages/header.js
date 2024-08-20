@@ -1,5 +1,5 @@
 import ArchHeader from "@/components/header/ArchHeader";
-import MintHeader from "@/components/header/MintHeader";
+import MintHeader, { Dropdown } from "@/components/header/MintHeader";
 
 export default function Header() {
   return (
@@ -8,6 +8,7 @@ export default function Header() {
       <br/>
       <MintHeader />
       <br/>
+      <Dropdown />
     </>
   );
 }
