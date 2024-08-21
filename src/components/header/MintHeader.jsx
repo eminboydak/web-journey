@@ -87,7 +87,7 @@ export default function MintHeader() {
               <li className={styles.mintnavbarmenulist}>Links</li>
             </ul>
           </div>
-          <div id="mint-navbar-bottom-donate" className="px-4">
+          <div id="mint-navbar-bottom-donate" className="px-4 py-5">
             <button className="rounded-lg px-4 py-3 bg-slate-100 hover:bg-slate-200 transition ease-in duration-300 text-black">
               Donate
             </button>
@@ -100,7 +100,7 @@ export default function MintHeader() {
 
 export function Dropdown() {
   return (
-    <div id="mint-dropdown" className="absolute mt-2 p-2">
+    <div id="mint-dropdown" className="absolute mt-2 pt-6">
       <div
         id="mint-dropdown-top"
         className="bg-slate-100 border-t-2 border-emerald-800 text-black w-auto flex"
