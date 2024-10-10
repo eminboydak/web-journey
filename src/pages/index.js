@@ -1,9 +1,13 @@
-import Link from "next/link";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function Home() {
   return (
     <>
-      <Link href="/header">header</Link>
+      <PageLayout>
+        <div className="">
+          <h1>Üşendim bu kadar içerik ve görsel yeterli</h1>
+        </div>
+      </PageLayout>
     </>
   );
 }
