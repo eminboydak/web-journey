@@ -1,8 +1,9 @@
 import Link from "next/link";
 
 const links = [
+  { name: "Home", url: "/"},
   { name: "Header", url: "/header" },
-  { name: "Header", url: "/header" },
+  { name: "Supabase", url: "/supabase" },
 ];
 
 export default function Header() {
