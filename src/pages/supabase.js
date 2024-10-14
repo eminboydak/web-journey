@@ -33,18 +33,71 @@ export default function Supabase() {
     }
   };
 
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [stock, setStock] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const { data, error } = await supabase.from("products").insert([
+      {
+        name,
+        price,
+        stock,
+      },
+    ]);
+
+    if (error) {
+      console.error("Error inserting data:", error);
+    } else {
+      console.log("Data inserted:", data);
+      setName("");
+      setPrice("");
+      setStock("");
+    }
+  };
+
   return (
     <PageLayout>
-      <div>
-        <h1 className="text-xl">Ürün Listesi</h1>
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              <strong>{product.name}</strong> - {product.price} TL - Stok:{" "}
-              {product.stock}
-            </li>
-          ))}
-        </ul>
+      <div className="bg-slate-600">
+        <div>
+          <h1 className="text-xl">Ürün Listesi</h1>
+          <ul>
+            {products.map((product) => (
+              <li key={product.id}>
+                <strong>{product.name}</strong> - {product.price} TL - Stok:{" "}
+                {product.stock}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="text-black">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Product name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <input
+              type="number"
+              placeholder="Price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              required
+            />
+            <input
+              type="number"
+              placeholder="Stock"
+              value={stock}
+              onChange={(e) => setStock(e.target.value)}
+              required
+            />
+            <button type="submit">Add Product</button>
+          </form>
+        </div>
       </div>
     </PageLayout>
   );
